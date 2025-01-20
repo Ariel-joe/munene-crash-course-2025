@@ -1,4 +1,5 @@
 import React from "react";
+import { FaLocationDot } from "react-icons/fa6";
 
 const JobListing = () => {
   return (
@@ -20,8 +21,8 @@ const JobListing = () => {
         <div className="border border-gray-100 mb-5"></div>
 
         <div className="flex flex-col lg:flex-row justify-between mb-4">
-          <div className="text-orange-700 mb-3">
-            <i className="fa-solid fa-location-dot text-lg"></i>
+          <div className="flex items-center text-orange-700 mb-3">
+            <FaLocationDot size={20} className="mr-1" />
             Boston, MA
           </div>
           <a
@@ -36,4 +37,4 @@ const JobListing = () => {
   );
 };
 
-export default JobListing;
+export { JobListing };

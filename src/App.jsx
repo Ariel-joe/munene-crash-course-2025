@@ -2,8 +2,10 @@ import React from "react";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { Devs } from "./components/Devs";
-import { BrowseJobs } from "./components/BrowseJobs";
 import { ViewAllJobs } from "./components/ViewAllJobs";
+import { Card } from "./components/Card";
+import { JobListing } from "./components/JobListing";
+import { BrowseJobs } from "./components/BrowseJobs";
 
 const App = () => {
   return (
@@ -12,15 +14,25 @@ const App = () => {
       {/* <!-- Hero --> */}
       <Hero />
       {/* <!-- Developers and Employers --> */}
-      < Devs />
+      <Devs />
 
       {/* <!-- Browse Jobs --> */}
-      < BrowseJobs />
+      <BrowseJobs>
+        <Card>
+          <JobListing />
+        </Card>
+
+        <Card>
+          <JobListing />
+        </Card>
+
+        <Card>
+          <JobListing />
+        </Card>
+      </BrowseJobs>
 
       {/* view all jobs */}
       <ViewAllJobs />
-
-      
     </>
   );
 };
