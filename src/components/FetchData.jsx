@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 const FetchData = () => {
   const [data, setData] = useState([]);
 
-  const [load, setload] = useState(true);
+  const [load, setLoad] = useState(true);
 
   useEffect(() => {
     const dataFetch = async () => {
@@ -15,7 +15,7 @@ const FetchData = () => {
       } catch (error) {
         console.error("failed to fetch data", error);
       } finally {
-        setload(false)
+        setLoad(false);
       }
     };
 
@@ -24,15 +24,15 @@ const FetchData = () => {
 
   return (
     <>
-
       {load ? (
-        <p>Loading...</p>
+        <div className="flex items-center justify-center h-screen">
+          <p>Loading...</p>
+        </div>
       ) : (
         <div className="flex items-center justify-center h-screen">
           <p>Kanye once said {data.quote}</p>
         </div>
       )}
-
     </>
   );
 };

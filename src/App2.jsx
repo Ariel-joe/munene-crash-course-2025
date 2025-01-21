@@ -6,7 +6,6 @@ const App2 = () => {
   return (
     <div>
         <FetchData />
-        <AddCount />
     </div>
   );
 };
