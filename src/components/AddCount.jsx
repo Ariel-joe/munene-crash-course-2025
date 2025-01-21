@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 
 const AddCount = () => {
-  const [count, setCount] = useState(0);
+  const initialState = () => {
+    console.log("initializing...");
+
+    return 10;
+  };
+  const [count, setCount] = useState(initialState);
 
   const incrementFunc = () => {
     setCount(count + 1);
@@ -21,7 +26,12 @@ const AddCount = () => {
         +
       </button>
       <span>{count}</span>
-      <button onClick={decrementFunc} className="bg-red-500 text-white px-4 py-2">-</button>
+      <button
+        onClick={decrementFunc}
+        className="bg-red-500 text-white px-4 py-2"
+      >
+        -
+      </button>
     </div>
   );
 };
