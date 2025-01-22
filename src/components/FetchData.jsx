@@ -8,7 +8,9 @@ const FetchData = () => {
   useEffect(() => {
     const dataFetch = async () => {
       try {
-        const response = await fetch("https://cat-fact.herokuapp.com/facts");
+        const response = await fetch(
+          "https://api.thecatapi.com/v1/images/search?limit=10"
+        );
         const result = await response.json();
 
         setData(result);
@@ -32,12 +34,12 @@ const FetchData = () => {
         <div className="flex items-center justify-center gap-4 h-screen">
           {data.map((elem, i) => (
             <div key={i} className="w-[250px] h-[100px]">
-              <p className="bg-blue-400 font-semibold text-lg p-2">
-                {elem.type}
-              </p>
-              <p className="bg-slate-400 text-gray-800 p-2 text-sm">
-                {elem.text}
-              </p>
+              <img
+                src={elem.url}
+                alt=""
+                width={elem.width}
+                height={elem.height}
+              />
             </div>
           ))}
         </div>
